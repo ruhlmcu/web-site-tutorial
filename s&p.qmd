@@ -1,0 +1,34 @@
+---
+title: "S&P 500 Interactive Chart"
+format:
+  html:
+    code-fold: true  # Allows hiding code
+jupyter: python3     # Specifies Python version
+---
+
+# S&P 500 Performance Since 2000
+
+Here's an interactive chart showing the S&P 500 index.
+
+# Python code will go here in a code block
+import pandas as pd
+import plotly.graph_objs as go
+
+# Load data from GitHub
+url = 'https://raw.githubusercontent.com/martingeew/finance_dashboard_demo/main/sp500_20240825.csv'
+df = pd.read_csv(url, index_col=0)
+
+def plot_daily(df):
+    fig = go.Figure(go.Scatter(
+        x=df.index,
+        y=df["close"],
+        mode="lines",
+        name="S&P 500 Close"
+    ))
+    fig.update_layout(
+        title="Daily S&P 500 Closing Value",
+        template="plotly_white"
+    )
+    return fig
+
+plot_daily(df)
