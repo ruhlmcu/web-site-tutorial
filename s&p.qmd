@@ -35,9 +35,9 @@ def plot_daily(df):
     )
 
     fig.update_layout(
-        title="Daily S&P 500 Closing value",
-        xaxis_title="",
-        yaxis_title="",
+        title="Daily S&P 500 Closing Value",
+        xaxis_title="Date",
+        yaxis_title="Close",
         template="plotly_dark",  # Use the dark mode template
     )
 
