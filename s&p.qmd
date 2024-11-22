@@ -32,3 +32,4 @@ def plot_daily(df):
     return fig
 
 plot_daily(df)
+```
